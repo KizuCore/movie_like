@@ -29,12 +29,19 @@ Une page **Favoris** affiche uniquement les films likés.
 
 ## Démarrage
 
-1. **Cloner** le projet, puis installer les dépendances :
+1. **Créer le .env** en copiant le .env.template:
+    ```bash
+    cp .env.template .env
+    ```
+
+2. **Ajouter votre clé OMDb** :
+
+3. **Cloner** le projet, puis installer les dépendances :
    ```bash
    flutter pub get
    ```
 
-2. **Lancer le projet** :
+4. **Lancer le projet** :
     ```bash
     flutter run 
     ```
