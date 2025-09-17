@@ -79,6 +79,7 @@ dependencies:
     sdk: flutter
   http: ^1.5.0
   shared_preferences: ^2.3.2
+  flutter_dotenv: ^6.0.0
 ```
 
 ---
