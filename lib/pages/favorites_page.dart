@@ -3,6 +3,7 @@ import '../models/movie.dart';
 import '../repositories/likes_repository.dart';
 import '../services/omdb_service.dart';
 import '../widgets/movie_card.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class FavoritesPage extends StatefulWidget {
   const FavoritesPage({super.key});
@@ -23,7 +24,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
   @override
   void initState() {
     super.initState();
-    _omdb = OmdbService(apiKey: 'e205f1d6'); // la clé API OMDb
+    _omdb = OmdbService(apiKey: dotenv.env['OMDB_API_KEY']!);
     _bootstrap();
   }
 
