@@ -1,5 +1,7 @@
 # Movies Likes (OMDb)
 
+## Théo Guérin
+
 Application Flutter permettant de **rechercher des films via l’API OMDb**, de **liker/déliker** des films (bordure + cœur), de **compter** les favoris dans l’AppBar, et de **persister** les likes en local avec `SharedPreferences`.  
 Une page **Favoris** affiche uniquement les films likés.
 
