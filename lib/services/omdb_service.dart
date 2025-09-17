@@ -36,8 +36,8 @@ class OmdbService {
     // On cast en List<Map<String, dynamic>> pour manipuler plus facilement
     final list = (data['Search'] as List).cast<Map<String, dynamic>>();
 
-  // Transformer chaque élément JSON de la liste en un objet Movie
-  // grâce au constructeur factory Movie.fromOmdb, puis retourner la liste
+    // Transformer chaque élément JSON de la liste en un objet Movie
+    // grâce au constructeur factory Movie.fromOmdb, puis retourner la liste
     return list.map(Movie.fromOmdb).toList();
 
   }

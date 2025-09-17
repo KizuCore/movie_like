@@ -23,10 +23,11 @@ class _FavoritesPageState extends State<FavoritesPage> {
   @override
   void initState() {
     super.initState();
-    _omdb = OmdbService(apiKey: 'e205f1d6'); // ta clé
+    _omdb = OmdbService(apiKey: 'e205f1d6'); // la clé API OMDb
     _bootstrap();
   }
 
+  // Charger les films likés au démarrage
   Future<void> _bootstrap() async {
     try {
       _liked = await _likesRepo.load();
@@ -40,6 +41,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
     }
   }
 
+  // Retirer un film des favoris
   Future<void> _toggleUnlike(Movie m) async {
     setState(() {
       _liked.remove(m.imdbID);

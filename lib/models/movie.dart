@@ -10,7 +10,7 @@ class Movie {
     this.year,
     this.poster,
   });
-
+  // Constructeur pour créer un objet Movie à partir des données JSON de l'API OMDb
   factory Movie.fromOmdb(Map<String, dynamic> json) => Movie(
     imdbID: json['imdbID'] as String,
     title: json['Title'] as String,

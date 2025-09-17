@@ -13,9 +13,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final _searchCtrl = TextEditingController();
-  late final OmdbService _omdb;
-  final _likesRepo = LikesRepository();
+  final _searchCtrl = TextEditingController(); // Contrôleur pour le champ de recherche
+  late final OmdbService _omdb; // Service OMDb
+  final _likesRepo = LikesRepository(); // Référentiel pour gérer les likes
 
   List<Movie> _movies = [];
   Set<String> _liked = {};
@@ -25,19 +25,22 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _omdb = OmdbService(apiKey: 'e205f1d6'); // <- ta clé
+    _omdb = OmdbService(apiKey: 'e205f1d6'); // la clé API OMDb
     _bootstrap();
   }
 
+  // Initialiser l'état en chargeant les films likés
   Future<void> _bootstrap() async {
     await _loadLikes();
   }
 
+  // Charger les films likés depuis le référentiel
   Future<void> _loadLikes() async {
     _liked = await _likesRepo.load();
     if (mounted) setState(() {});
   }
 
+  // Sauvegarder les films likés dans le référentiel
   Future<void> _saveLikes() => _likesRepo.save(_liked);
 
   // Rechercher des films via OMDb
